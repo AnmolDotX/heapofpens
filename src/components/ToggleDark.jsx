@@ -14,9 +14,9 @@ const ToggleDark = () => {
     console.log(isDark);
 
     return (
-        <button name="toggle dark/light" onClick={handleToggle}>
+        <button title="toggle dark/light" onClick={handleToggle}>
             {
-                isDark ? <FaSun /> : <FaMoon />
+                isDark ? <FaSun fill="white" /> : <FaMoon fill="black" />
             }
         </button>
     );

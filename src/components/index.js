@@ -7,5 +7,8 @@ import SearchBar from "./SearchBar";
 import UserProfile from "./UserProfile";
 import BlogCard from "./BlogCard";
 import ToggleDark from "./ToggleDark";
+import Select from "./Select";
+import Button from "./Button";
+import Input from "./Input";
 
-export {HTMLWrapper,Header, Footer, ExternalLinks, SearchBar, BlogCard, UserProfile, ToggleDark, HeaderWrap}
+export {HTMLWrapper,Header, Footer, ExternalLinks, SearchBar, Select, BlogCard, UserProfile, ToggleDark, HeaderWrap, Button, Input}
