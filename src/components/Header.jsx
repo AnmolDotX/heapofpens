@@ -1,4 +1,4 @@
-import { HeaderWrap, SearchBar, UserProfile } from "@/components";
+import { HeaderWrap, SearchBar, ToggleDark, UserProfile } from "@/components";
 import { FaPenFancy } from 'react-icons/fa'
 
 const Header = () => {
@@ -9,6 +9,7 @@ const Header = () => {
                 <button className="flex items-center gap-2 bg-sky-600/70 transition-all duration-300 hover:bg-sky-600 active:bg-sky-500 shadow-2xl shadow-lime-500/50 py-[6px] px-3 rounded-full"><span>Write</span> <FaPenFancy /></button>
                 <SearchBar/>
                 <UserProfile/>
+                <ToggleDark/>
             </div>
             
         </HeaderWrap>
