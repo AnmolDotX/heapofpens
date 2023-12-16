@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <StoreProvider>
       <HTMLWrapper>
         <body
-          className={`${inter.className} flex flex-col items-center dark:bg-black bg-lime-500`}
+          className={`${inter.className} flex flex-col items-center dark:bg-black bg-lime-500 transition-all duration-200`}
         >
           <Header />
           <main className='flex items-start justify-between text-white px-40 mt-32 w-full'>

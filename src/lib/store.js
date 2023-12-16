@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import demoReducer from "./features/demoData";
-import toggleReducer from './features/toggleDarkSlice'
+import toggleReducer from './features/toggleDarkSlice';
+import authReducer from './features/authSlice'
 
 export const makeStore = () => {
     return configureStore({
         reducer : {
-            demo : demoReducer,
-            toggleDark : toggleReducer
+            auth : authReducer,
+            toggleDark : toggleReducer,
         }
     })
 }

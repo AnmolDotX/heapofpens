@@ -11,5 +11,8 @@ import Select from "./Select";
 import Button from "./Button";
 import Input from "./Input";
 import PostForm from "./PostForm";
+import LoginComponent from "./LoginComponent";
+import LoginForm from "./LoginForm";
+import LogoutBtn from "./LogoutBtn";
 
-export {HTMLWrapper,Header, Footer, ExternalLinks, SearchBar, Select, BlogCard, UserProfile, ToggleDark, HeaderWrap, Button, Input, PostForm}
+export {HTMLWrapper,Header, Footer, ExternalLinks, SearchBar, Select, BlogCard, UserProfile, ToggleDark, HeaderWrap, Button, Input, PostForm, LoginComponent, LoginForm, LogoutBtn}

@@ -1,4 +1,4 @@
-import { HeaderWrap, SearchBar, ToggleDark, UserProfile } from "@/components";
+import { HeaderWrap, LogoutBtn, SearchBar, ToggleDark, UserProfile } from "@/components";
 import { FaPenFancy } from 'react-icons/fa'
 
 const Header = () => {
@@ -10,6 +10,7 @@ const Header = () => {
                 <SearchBar/>
                 <UserProfile/>
                 <ToggleDark/>
+                <LogoutBtn />
             </div>
             
         </HeaderWrap>

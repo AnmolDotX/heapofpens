@@ -11,7 +11,7 @@ const ToggleDark = () => {
     }
 
     const isDark = useSelector(state=>state.toggleDark.isDark);
-    console.log(isDark);
+    // console.log(isDark);
 
     return (
         <button title="toggle dark/light" onClick={handleToggle}>
