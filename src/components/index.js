@@ -10,5 +10,6 @@ import ToggleDark from "./ToggleDark";
 import Select from "./Select";
 import Button from "./Button";
 import Input from "./Input";
+import PostForm from "./PostForm";
 
-export {HTMLWrapper,Header, Footer, ExternalLinks, SearchBar, Select, BlogCard, UserProfile, ToggleDark, HeaderWrap, Button, Input}
+export {HTMLWrapper,Header, Footer, ExternalLinks, SearchBar, Select, BlogCard, UserProfile, ToggleDark, HeaderWrap, Button, Input, PostForm}
