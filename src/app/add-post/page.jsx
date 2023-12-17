@@ -2,8 +2,7 @@ import { PostForm } from "@/components";
 
 const AddPost = () => {
     return (
-        <div>
-            yaha add karenge
+        <div className="py-8">
             <PostForm/>
         </div>
     );
