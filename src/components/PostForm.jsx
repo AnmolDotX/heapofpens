@@ -20,6 +20,10 @@ export default function PostForm({ post }) {
 
   const router = useRouter();
   const userData = useSelector((state) => state.auth.userData);
+<<<<<<< Updated upstream
+=======
+//   console.log(state);
+>>>>>>> Stashed changes
 
   const submit = async (data) => {
     if (post) {
