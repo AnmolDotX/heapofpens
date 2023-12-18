@@ -20,7 +20,6 @@ export default function PostForm({ post }) {
 
   const router = useRouter();
   const userData = useSelector((state) => state.auth.userData);
-  console.log(userData);
 
   const submit = async (data) => {
     if (post) {
