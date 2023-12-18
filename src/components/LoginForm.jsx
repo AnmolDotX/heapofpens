@@ -6,19 +6,24 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Button, Input } from '@/components'
+import { login as authLogin } from "@/lib/features/authSlice";
 
 const LoginForm = () => {
     const router = useRouter();
     const dispatch = useDispatch();
     const {register, handleSubmit} = useForm()
     const [error, setError] = useState("")
-    const login = async () => {
+    const login = async (data) => {
+      console.log(data);
         setError("");
         try {
             const session = await authService.login(data)
             if(session) {
                 const userData = await authService.getCurrentUser();
-                if(userData) dispatch(authLogin(userData));
+                console.log(userData);
+                if(userData) {
+                  dispatch(authLogin(userData));
+                }
                 router.push("/");
             }
         } catch (error) {

@@ -20,7 +20,7 @@ export default function PostForm({ post }) {
 
   const router = useRouter();
   const userData = useSelector((state) => state.auth.userData);
-  console.log(state);
+  console.log(userData);
 
   const submit = async (data) => {
     if (post) {
@@ -134,7 +134,7 @@ export default function PostForm({ post }) {
         <Button
           type="submit"
           bgColor={post ? "bg-green-500" : undefined}
-          className="w-full"
+          className="w-full absolute z-30 right-11 bottom-10"
         >
           {post ? "Update" : "Submit"}
         </Button>

@@ -4,6 +4,7 @@ const initialState = {
     status : false,
     userData : null
 }
+console.log(initialState.userData);
 
 export const authSlice = createSlice({
     name : 'auth',
@@ -11,7 +12,8 @@ export const authSlice = createSlice({
     reducers : {
         login : (state , action) => {
             state.status = true;
-            state.userData = action.payload
+            console.log(action.payload);
+            state.userData = action.payload;
         },
         logout : (state) => {
             state.status = false;
@@ -21,4 +23,4 @@ export const authSlice = createSlice({
 })
 
 export const {login, logout} = authSlice.actions;
-export default authSlice.reducer
+export default authSlice.reducer;
