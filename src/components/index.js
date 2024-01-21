@@ -15,5 +15,6 @@ import LoginComponent from "./LoginComponent";
 import LoginForm from "./LoginForm";
 import LogoutBtn from "./LogoutBtn";
 import RTE from "./RTE";
+import Modal from "./Modal";
 
-export {HTMLWrapper,Header, Footer, ExternalLinks, SearchBar, Select, BlogCard, UserProfile, ToggleDark, HeaderWrap, Button, Input, RTE, PostForm, LoginComponent, LoginForm, LogoutBtn}
+export {HTMLWrapper,Header, Modal, Footer, ExternalLinks, SearchBar, Select, BlogCard, UserProfile, ToggleDark, HeaderWrap, Button, Input, RTE, PostForm, LoginComponent, LoginForm, LogoutBtn}
