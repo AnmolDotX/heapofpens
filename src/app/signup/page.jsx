@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Button, Input } from "@/components";
 
 const SignupPage = () => {
-  const router = useRouter;
+  const router = useRouter();
   const [error, setError] = useState("");
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
