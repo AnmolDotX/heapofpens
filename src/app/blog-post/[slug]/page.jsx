@@ -6,6 +6,7 @@ import appwriteService from "@/appwrite/services";
 import parse from "html-react-parser";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import Link from "next/link";
 
 const BlogPostDetail = () => {
   const { slug } = useParams();
@@ -46,7 +47,7 @@ const BlogPostDetail = () => {
 
           {isAuthor && (
             <div className='absolute right-6 top-6'>
-              <Link to={`/edit-post/${post.$id}`}>
+              <Link href={`/edit-post/${post.$id}`}>
                 <Button bgColor='bg-green-500' className='mr-3'>
                   <FaEdit />
                 </Button>
