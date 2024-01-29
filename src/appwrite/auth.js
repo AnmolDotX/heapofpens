@@ -1,5 +1,6 @@
 import conf from "@/conf/conf";
 import { Account, Client, ID } from "appwrite";
+import { useCookies } from "react-cookie";
 
 export class AuthService {
   client = new Client();
@@ -16,7 +17,7 @@ export class AuthService {
   async createAccount({ name, email, password }) {
     try {
       const userAccount = await this.account.create(
-        ID.unique(),
+        ID.unique(),    
         email,
         password,
         name,
@@ -33,7 +34,10 @@ export class AuthService {
 
   async login({ email, password }) {
     try {
-      return await this.account.createEmailSession(email, password);
+      const session = await this.account.createEmailSession(email, password);
+      const token = await this.account.createJWT();
+      console.log(session, token);
+      return {session, token}
     } catch (error) {
       console.log(error.message);
     }
@@ -41,7 +45,8 @@ export class AuthService {
 
   async getCurrentUser() {
     try {
-      return await this.account.get();
+      const data = await this.account.get();
+      return data;
     } catch (error) {
       console.log(error.message);
     }

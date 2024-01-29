@@ -7,28 +7,31 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Button, Input } from '@/components'
 import { login as authLogin } from "@/lib/features/authSlice";
+import { useCookies } from "react-cookie";
 
 const LoginForm = () => {
     const router = useRouter();
     const dispatch = useDispatch();
+    const [cookies, setCookie, removeCookie] = useCookies(['user-token']);
     const {register, handleSubmit} = useForm()
     const [error, setError] = useState("")
     const login = async (data) => {
         setError("");
         try {
-            const session = await authService.login(data)
+            const {session, token} = await authService.login(data);
+            setCookie('user-token', token.jwt);
             if(session) {
                 const userData = await authService.getCurrentUser();
-
                 if(userData) {
-                  dispatch(authLogin(userData));
+                  dispatch(authLogin({userData}));
                 }
                 router.push("/");
             }
         } catch (error) {
             setError(error.message);
+            console.log(error.message);
         }
-    }
+    };
 
   return (
     <>
