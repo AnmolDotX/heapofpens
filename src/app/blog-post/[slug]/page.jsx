@@ -7,6 +7,8 @@ import parse from "html-react-parser";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components";
 
 const BlogPostDetail = () => {
   const { slug } = useParams();
@@ -39,7 +41,7 @@ const BlogPostDetail = () => {
   return post ? (
     <article className='py-8'>
         <div className='w-full flex justify-center mb-4 relative border rounded-xl p-2'>
-          <img
+          <Image
             src={appwriteService.getFilePreview(post.featuredImage)}
             alt={post.title}
             className='rounded-xl'

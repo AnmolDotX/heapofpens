@@ -12,10 +12,12 @@ import { useCookies } from "react-cookie";
 const LoginForm = () => {
     const router = useRouter();
     const dispatch = useDispatch();
+    const [isLoading, setIsLoading] = useState(false);
     const [cookies, setCookie, removeCookie] = useCookies(['user-token']);
     const {register, handleSubmit} = useForm()
     const [error, setError] = useState("")
     const login = async (data) => {
+        setIsLoading(true);
         setError("");
         try {
             const {session, token} = await authService.login(data);
@@ -25,17 +27,18 @@ const LoginForm = () => {
                 if(userData) {
                   dispatch(authLogin({userData}));
                 }
+                setIsLoading(false)
                 router.push("/");
             }
         } catch (error) {
+            setIsLoading(false)
             setError(error.message);
-            console.log(error.message);
         }
     };
 
   return (
     <>
-      {error && <p className='text-red-600 mt-8 text-center'>{error}</p>}
+      {error && <p className='text-red-600 text-sm font-medium mt-8 text-center'>{error}</p>}
       <form onSubmit={handleSubmit(login)} className='mt-8'>
         <div className='space-y-5 transition-all'>
           <Input
@@ -60,7 +63,9 @@ const LoginForm = () => {
             })}
           />
           <Button type='submit' className='w-full'>
-            Sign in
+            {
+              isLoading ? "Signing in..." : "Sign in"
+            }
           </Button>
         </div>
       </form>

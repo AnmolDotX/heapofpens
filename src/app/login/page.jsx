@@ -2,7 +2,7 @@ import { LoginComponent } from "@/components";
 
 const LoginPage = () => {
     return (
-        <div>
+        <div className="w-full h-full">
             <LoginComponent />
         </div>
     );

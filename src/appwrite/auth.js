@@ -1,6 +1,5 @@
 import conf from "@/conf/conf";
 import { Account, Client, ID } from "appwrite";
-import { useCookies } from "react-cookie";
 
 export class AuthService {
   client = new Client();
@@ -28,7 +27,7 @@ export class AuthService {
         return userAccount;
       }
     } catch (error) {
-      console.log(error.message);
+      throw error;
     }
   }
 
@@ -39,7 +38,7 @@ export class AuthService {
       console.log(session, token);
       return {session, token}
     } catch (error) {
-      console.log(error.message);
+      throw error;
     }
   }
 

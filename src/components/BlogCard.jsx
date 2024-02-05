@@ -1,12 +1,13 @@
 import Link from "next/link";
 import appwriteServices from "@/appwrite/services";
+import Image from "next/image";
 
 export default function BlogCard({ $id, title, featuredImage }) {
   return (
     <Link href={`/blog-post/${$id}`}>
       <div class="w-full overflow-hidden rounded-2xl shadow-black/30 shadow-xl">
         <div class="relative h-full">
-        <img
+        <Image
             class="w-full h-full object-cover "
             src={appwriteServices.getFilePreview(featuredImage)}
             alt={title}

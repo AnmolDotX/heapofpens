@@ -6,6 +6,7 @@ import { Button, Input, Select, RTE } from "@/components";
 import appwriteService from "../appwrite/services";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
+import Image from "next/image";
 
 export default function PostForm({ post }) {
   const { register, handleSubmit, watch, setValue, control, getValues } =
@@ -117,7 +118,7 @@ export default function PostForm({ post }) {
         />
         {post && (
           <div className='w-full mb-4'>
-            <img
+            <Image
               src={appwriteService.getFilePreview(post.featuredImage)}
               alt={post.title}
               className='rounded-lg'
