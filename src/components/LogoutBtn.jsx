@@ -4,17 +4,20 @@ import authService from "@/appwrite/auth";
 import { logout } from "@/lib/features/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
-import { useCookies } from "react-cookie";
+import thekua from "js-cookie";
+import { useState } from "react";
 
 const LogoutBtn = () => {
+  const [isLaoding, setIsLaoding] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
-  const [cookies, setCookie, removeCookie] = useCookies();
   const logoutHandler = () => {
+    setIsLaoding(true)
     authService.logout().then(() => {
       dispatch(logout());
-      removeCookie('user-token');
+      thekua.remove('user-token');
       router.push("/login");
+      setIsLaoding(false)
     });
   };
   
@@ -24,7 +27,9 @@ const LogoutBtn = () => {
       onClick={logoutHandler}
       title="Logout"
     >
-      Logout
+      {
+        isLaoding ? "logging out..." : "Logout"
+      }
     </button>
   )
 };

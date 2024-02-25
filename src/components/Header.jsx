@@ -2,11 +2,9 @@
 import { HeaderWrap, LogoutBtn, SearchBar, ToggleDark, UserProfile } from "@/components";
 import Link from "next/link";
 import { FaPenFancy } from 'react-icons/fa'
-import { useSelector } from "react-redux";
 
 const Header = () => {
 
-  const authStatus = useSelector((state) => state.auth.status);
     return (
         <HeaderWrap>
             <h1 className="text-3xl font-bold tracking-widest">H-O-P</h1>
@@ -15,9 +13,6 @@ const Header = () => {
                 <SearchBar/>
                 <UserProfile/>
                 <ToggleDark/>
-                {
-                    authStatus && <LogoutBtn />
-                }
             </div>
             
         </HeaderWrap>

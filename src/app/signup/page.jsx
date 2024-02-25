@@ -61,6 +61,7 @@ const SignupPage = () => {
         <form onSubmit={handleSubmit(create)}>
           <div className='space-y-5'>
             <Input
+              className='bg-lime-950 shadow-lime-400/50 shadow py-3 border-4 border-lime-400 focus:bg-green-950 focus:border-4 focus:border-lime-200 text-lime-300 placeholder:text-lime-400'
               label='Full Name : '
               placeholder='Enter your full name'
               {...register("name", {
@@ -68,6 +69,7 @@ const SignupPage = () => {
               })}
             />
             <Input
+              className='bg-lime-950 shadow-lime-400/50 shadow py-3 border-4 border-lime-400 focus:bg-green-950 focus:border-4 focus:border-lime-200 text-lime-300 placeholder:text-lime-400'
               label='Email : '
               placeholder='Enter your email'
               type='email'
@@ -81,6 +83,7 @@ const SignupPage = () => {
               })}
             />
             <Input
+              className='bg-lime-950 shadow-lime-400/50 shadow py-3 border-4 border-lime-400 focus:bg-green-950 focus:border-4 focus:border-lime-200 text-lime-300 placeholder:text-lime-400'
               label='Password : '
               type='password'
               placeholder='Enter your password'

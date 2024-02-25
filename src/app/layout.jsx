@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         >
           <Header />
           <main className='flex items-start justify-between text-white pt-24 pb-10 px-[100px] w-full min-h-screen'>
-            <div className="w-[80%] h-screen">
+            <div className="w-[80%] min-h-screen flex items-center justify-center">
               {children}
             </div>
             <div className="flex flex-col items-center h-screen px-5 py-5">

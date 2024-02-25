@@ -5,19 +5,19 @@ import Image from "next/image";
 export default function BlogCard({ $id, title, featuredImage }) {
   return (
     <Link href={`/blog-post/${$id}`}>
-      <div class="w-full overflow-hidden rounded-2xl shadow-black/30 shadow-xl">
-        <div class="relative h-full">
-        <Image
-            class="w-full h-full object-cover "
+      <div className="w-full min-h-[250px] bg-lime-300/70 overflow-hidden rounded-2xl hover:scale-105 transition-all duration-200 hover:shadow-lime-400/50 hover:shadow-2xl active:shadow-lg active:shadow-lime-500/50 active:scale-95 active:bg-lime-500 shadow-black/30 shadow-xl flex flex-col items-center">
+        <div className="min-w-[50%] min-h-[150px] w-full">
+          <Image
+            className="w-full min-h-[150px] border-4 border-b-0 rounded-t-2xl border-lime-500 object-cover bg-green-950"
             src={appwriteServices.getFilePreview(featuredImage)}
-            alt={title}
+            alt={title + " alt text"}
           />
-          <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-lime-800/30 to-lime-700/90 flex items-center justify-center">
-            <h2 class="text-white text-2xl font-bold text-center">
-              Card Title yaha rhega aur bhi bada title yaha rh skta h
+        </div>
+          <div className="w-full min-h-[100px] flex items-center justify-start px-5">
+            <h2 className="text-lime-950 text-2xl text-left font-bold">
+              {title}
             </h2>
           </div>
-        </div>
       </div>
     </Link>
   );

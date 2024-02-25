@@ -1,21 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal } from ".";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { IoSettings } from "react-icons/io5";
+import { initialiseState } from "@/lib/features/authSlice";
 
 const UserProfile = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const togglePopup = () => {
     setIsPopupOpen((prev) => !prev);
   };
 
-
   const isAuthenticated = useSelector((state) => state.auth.status);
-  const user = useSelector((state) => state.auth.userData)
+  const user = useSelector((state) => state.auth.userData);
 
+  useEffect(()=>{
+    dispatch(initialiseState())
+  },[dispatch])
 
   return (
     <div className="relative">

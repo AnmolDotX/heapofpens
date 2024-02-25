@@ -38,23 +38,23 @@ const BlogPostDetail = () => {
       }
     });
   };
+
   return post ? (
     <article className='py-8'>
         <div className='w-full flex justify-center mb-4 relative border rounded-xl p-2'>
           <Image
-            src={appwriteService.getFilePreview(post.featuredImage)}
-            alt={post.title}
-            className='rounded-xl'
+            src={appwriteService.getFilePreview(post?.featuredImage)}
+            alt={post?.title}
+            className='rounded-xl min-w-[200px] min-h-[200px]'
           />
-
           {isAuthor && (
             <div className='absolute right-6 top-6'>
               <Link href={`/edit-post/${post.$id}`}>
-                <Button bgColor='bg-green-500' className='mr-3'>
+                <Button className='mr-3'>
                   <FaEdit />
                 </Button>
               </Link>
-              <Button bgColor='bg-red-500' onClick={deletePost}>
+              <Button onClick={deletePost}>
                 <RiDeleteBin6Line />
               </Button>
             </div>

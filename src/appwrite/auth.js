@@ -9,7 +9,6 @@ export class AuthService {
     this.client
       .setEndpoint(conf.appwriteUrl)
       .setProject(conf.appwriteProjectId);
-
     this.account = new Account(this.client);
   }
   
@@ -35,7 +34,6 @@ export class AuthService {
     try {
       const session = await this.account.createEmailSession(email, password);
       const token = await this.account.createJWT();
-      console.log(session, token);
       return {session, token}
     } catch (error) {
       throw error;
